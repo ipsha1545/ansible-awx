@@ -9,8 +9,8 @@ Vagrant.configure('2') do |config|
   end
   config.vm.provision 'shell', inline: 'apt-get update'
   {
-    'ansible-awx'   => '192.168.33.11',
-    'ansible-lab'   => '192.168.33.12'
+    'ansible-awx'   => '192.168.56.104',
+    'ansible-lab'   => '192.168.56.105'
   }.each do |short_name, ip|
     config.vm.define short_name do |host|
       host.vm.network 'private_network', ip: ip
